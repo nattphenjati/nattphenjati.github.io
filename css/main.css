@@ -53,6 +53,9 @@ a:hover{
 /* Only Extra Small devices (XS) */
 @media only screen and (max-width: 768px) {
   .content{
+    position: relative;
+    transform: translateY(-0%);
+    margin-top: 15px;
     margin-left: 15px;
   }
 }
