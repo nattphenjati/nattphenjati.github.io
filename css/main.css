@@ -10,17 +10,19 @@ h1{
   margin-top: 5px;
   margin-bottom: 0px;
   font-family: 'Oswald', sans-serif;
+  line-height: 78px;
 }
 h2{
   color: #ffffff;
   margin-bottom: 0px;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 a{
   color: #ffffff;
 }
 a:hover{
   text-decoration: none;
+  color: #f05f40;
 }
 
 .wrapper{
@@ -31,31 +33,45 @@ a:hover{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  margin-left: 120px;
+  margin-top: -20px;
+  margin-left: 100px;
 }
 
 
 /*---Responsive (Bootstrap Standard)---*/
 /* Only Large devices (LG) */
 @media only screen and (min-width: 1201px) {
-
+  .mobile-only{
+    display: none;
+  }
 }
 /* Only Medium devices (MD) */
 @media only screen and (min-width: 993px) and (max-width: 1200px) {
-
+  .mobile-only{
+    display: none;
+  }
 }
 /* Only Small devices (SM) */
 @media only screen and (min-width: 769px) and (max-width: 992px) {
+  .mobile-only{
+    display: none;
+  }
   .content{
     margin-left: 60px;
   }
 }
 /* Only Extra Small devices (XS) */
 @media only screen and (max-width: 768px) {
+  .mobile-only{
+    display: block;
+  }
   .content{
-    position: relative;
-    transform: translateY(-0%);
-    margin-top: 15px;
+    top: 45px;
+    transform: translateY(0px);
     margin-left: 15px;
+  }
+  h1{
+    font-size: 48px;
+    line-height: 60px;
   }
 }
