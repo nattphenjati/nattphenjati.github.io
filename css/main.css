@@ -43,7 +43,9 @@ a:hover{
 /*---Animation---*/
 .state1,.state2,.state3{
   opacity: 0;
-  animation: appear 2s forwards;
+  transform: translate(0,5px);
+  animation: appear 2s forwards, movein 1s forwards;
+  display: inline-block;
 }
 .state1{
   animation-delay: 0s;
@@ -63,7 +65,14 @@ a:hover{
     opacity: 1;
   }
 }
-
+@keyframes movein {
+  0% {
+    transform: translate(0,5px);
+  }
+  100% {
+    transform: translate(0,0px);
+  }
+}
 
 /*---Responsive (Bootstrap Standard)---*/
 /* Only Large devices (LG) */
