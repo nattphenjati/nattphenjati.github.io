@@ -44,17 +44,17 @@ a:hover{
 .state1,.state2,.state3{
   opacity: 0;
   transform: translate(0,5px);
-  animation: appear 2s forwards, movein 1s forwards;
+  animation: appear 1.5s forwards, movein 1s forwards;
   display: inline-block;
 }
 .state1{
   animation-delay: 0s;
 }
 .state2{
-  animation-delay: 1.5s;
+  animation-delay: 1s;
 }
 .state3{
-  animation-delay: 3s;
+  animation-delay: 2s;
 }
 
 @keyframes appear {
