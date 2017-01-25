@@ -17,12 +17,14 @@ h2{
   margin-bottom: 0px;
   font-family: 'Roboto', sans-serif;
 }
+
 a{
-  color: #ffffff;
+  color: #f05f40;
+  text-decoration: none;
 }
 a:hover{
-  text-decoration: none;
   color: #f05f40;
+  text-decoration: underline;
 }
 
 .wrapper{
@@ -35,6 +37,31 @@ a:hover{
   transform: translateY(-50%);
   margin-top: -20px;
   margin-left: 100px;
+}
+
+
+/*---Animation---*/
+.state1,.state2,.state3{
+  opacity: 0;
+  animation: appear 2s forwards;
+}
+.state1{
+  animation-delay: 0s;
+}
+.state2{
+  animation-delay: 2s;
+}
+.state3{
+  animation-delay: 4s;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 
@@ -68,7 +95,7 @@ a:hover{
   .content{
     top: 45px;
     transform: translateY(0px);
-    margin-left: 15px;
+    margin: 0px 20px;
   }
   h1{
     font-size: 48px;
