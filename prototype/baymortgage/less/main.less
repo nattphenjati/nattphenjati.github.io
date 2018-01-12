@@ -1,0 +1,159 @@
+/*
+To compile:
+0.  Visit https://github.com/jonycheung/deadsimple-less-watch-compiler
+1.  Open Terminal
+2.  Type this code at the project folder:
+    less-watch-compiler less css
+*/
+@import "../bower_components/bootstrap/less/bootstrap.less";
+@import "../bower_components/font-awesome/css/font-awesome.min.css";
+@import "https://fonts.googleapis.com/css?family=Kanit:300,300i&subset=thai";
+@import "_variables.less";
+@import "_mixins.less";
+
+/*---General Setting---*/
+body{
+  font-size: 16px;
+}
+h1{
+  font-family: @font-primary;
+}
+h2{
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+label{
+  font-weight: normal;
+}
+.container{
+  max-width: 600px;
+}
+.max-width{
+  width: 100%;
+}
+.box-option{
+  display: none;
+}
+
+/*---Navigation---*/
+.navbar-inverse{
+  background-color: @color-black;
+  border: 0px;
+  margin-bottom: 0px;
+  .navbar-header{
+    margin: 0px;
+    .navbar-brand{
+      padding-left: 0px;
+      font-size: 20px;
+      color:@color-white;
+    }
+    .btn-secondary{
+      float: right;
+      font-size: 14px;
+      margin: 11px 0px 11px 15px;
+      padding: 4px 5px;
+    }
+  }
+}
+
+/*---CPA Form---*/
+.step{
+  background: @color-grey-light;
+  text-align: center;
+  font-size: 14px;
+  h3{
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 2px;
+  }
+  .step-item{
+    padding-bottom: 15px;
+    color: @color-grey-normal;
+    &.active{
+      background: url("../images/step-item-active.png") no-repeat bottom;
+      color: @color-black
+    }
+  }
+}
+.page-header{
+  margin: 30px 0 20px;
+  border-bottom: 2px solid @color-grey-normal;
+}
+.page-button{
+  margin-bottom: 15px;
+  .button-left{
+      padding-right: 0px;
+  }
+}
+.card{
+  background: @color-grey-light;
+  border: 1px solid @color-grey-normal;
+  border-radius: 3px;
+  padding: 15px;
+  margin-bottom: 10px;
+  .text-row{
+    margin: 0px 2.5px;
+    font-size: 14px;
+    .left-text{
+      width: 110px;
+      text-align: right;
+      display: inline-block;
+    }
+    .right-text{
+      margin-left: 10px;
+      display: inline-block;
+    }
+  }
+}
+
+/*---Form---*/
+.form-control{
+  height: 44px;
+  padding: 20px 15px;
+  box-shadow: none;
+  border: 2px solid @color-grey-normal;
+  font-size: 16px;
+}
+.form-subtext{
+  margin-top: 10px;
+  font-size: 14px;
+}
+.input-group-addon{
+  min-width: 60px;
+  background: @color-grey-light;
+  border: 2px solid @color-grey-normal;
+}
+
+/*---Button---*/
+.btn{
+  padding: 10px;
+  font-size: 16px;
+}
+.btn-primary {
+  &:extend(.btn all);
+  .button-variant(@color-white, @color-black, @color-black);
+}
+.btn-secondary {
+  &:extend(.btn all);
+  .button-variant(@color-black, @color-grey-light, @color-grey-light);
+}
+
+/*---Responsive (Bootstrap Standard)---*/
+/* Only Large devices (LG) */
+@media only screen and (min-width: 1201px) {
+
+}
+/* Only Medium devices (MD) */
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+
+}
+/* Only Small devices (SM) */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+
+}
+/* Only Extra Small devices (XS) */
+@media only screen and (max-width: 768px) {
+
+}
