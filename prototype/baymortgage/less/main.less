@@ -29,6 +29,9 @@ hr{
   border-top: 1px solid @color-grey-normal;
   margin: 15px 0px;
 }
+p{
+  font-size: 14px;
+}
 .container{
   max-width: 600px;
 }
@@ -38,16 +41,19 @@ hr{
 .box-option{
   display: none;
 }
+.clear{
+  clear: both;
+}
 
 /*---Navigation---*/
 .navbar-inverse{
   background-color: @color-black;
   border: 0px;
   margin-bottom: 0px;
+  border-radius: 0px;
   .navbar-header{
     margin: 0px;
     .navbar-brand{
-      padding-left: 0px;
       font-size: 20px;
       color:@color-white;
     }
@@ -77,16 +83,6 @@ hr{
       background: url("../images/step-item-active.png") no-repeat bottom;
       color: @color-black
     }
-  }
-}
-.page-header{
-  margin: 30px 0 20px;
-  border-bottom: 2px solid @color-grey-normal;
-}
-.page-button{
-  margin-bottom: 15px;
-  .button-left{
-      padding-right: 0px;
   }
 }
 .card{
@@ -143,12 +139,37 @@ hr{
 }
 
 /*---Page---*/
+.page-header{
+   margin: 30px 0 20px;
+   border-bottom: 2px solid @color-grey-normal;
+}
+.page-title{
+  margin-bottom: 10px;
+  .page-title-main{
+    float: left;
+  }
+  .page-title-support{
+    float: right;
+  }
+}
+.page-button{
+   margin-bottom: 15px;
+   .button-left{
+       padding-right: 0px;
+   }
+}
 .page-summary{
   h2{
     margin-top: 20px;
   }
   .card{
     margin: 20px 0px;
+  }
+}
+.page-tc{
+  margin-top: 30px;
+  .page-button{
+    margin-top:20px;
   }
 }
 
@@ -181,5 +202,11 @@ hr{
 }
 /* Only Extra Small devices (XS) */
 @media only screen and (max-width: 768px) {
-
+  .navbar-inverse{
+    .navbar-header{
+      .navbar-brand{
+        padding-left: 0px;
+      }
+    }
+  }
 }
