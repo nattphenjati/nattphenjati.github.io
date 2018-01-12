@@ -7,7 +7,6 @@ To compile:
 */
 @import "../bower_components/bootstrap/less/bootstrap.less";
 @import "../bower_components/font-awesome/css/font-awesome.min.css";
-@import "https://fonts.googleapis.com/css?family=Kanit:300,300i&subset=thai";
 @import "_variables.less";
 @import "_mixins.less";
 
@@ -16,7 +15,6 @@ body{
   font-size: 16px;
 }
 h1{
-  font-family: @font-primary;
 }
 h2{
   font-size: 18px;
@@ -26,6 +24,10 @@ h2{
 }
 label{
   font-weight: normal;
+}
+hr{
+  border-top: 1px solid @color-grey-normal;
+  margin: 15px 0px;
 }
 .container{
   max-width: 600px;
@@ -94,7 +96,7 @@ label{
   padding: 15px;
   margin-bottom: 10px;
   .text-row{
-    margin: 0px 2.5px;
+    margin: 5px 0px;
     font-size: 14px;
     .left-text{
       width: 110px;
@@ -104,6 +106,20 @@ label{
     .right-text{
       margin-left: 10px;
       display: inline-block;
+    }
+  }
+  .card-header{
+    border-bottom: 1px solid @color-grey-normal;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: 15px;
+    .card-header-edit{
+      float: right;
+      font-size: 14px;
+      cursor: pointer;
     }
   }
 }
@@ -124,6 +140,16 @@ label{
   min-width: 60px;
   background: @color-grey-light;
   border: 2px solid @color-grey-normal;
+}
+
+/*---Page---*/
+.page-summary{
+  h2{
+    margin-top: 20px;
+  }
+  .card{
+    margin: 20px 0px;
+  }
 }
 
 /*---Button---*/
