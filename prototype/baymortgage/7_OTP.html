@@ -17,6 +17,7 @@
     <title>7_OTP</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="css/main.css">
+    <link href="node_modules/bootstrap-pincode-input/css/bootstrap-pincode-input.css" rel="stylesheet">
 
 <!--This is Google Analytics-->
     <script>
@@ -41,18 +42,24 @@
     </nav>
 
     <div class="container page-otp">
-      <div class="page-title">
-        <h2 class="page-title-main">ใส่รหัส OTP ยืนยันตัวตน</h2>
-        <div class="clear">
+      <div class="card">
+        <img src="images/icon-otp.png" alt="" class="icon-otp">
+        <h2>ใส่รหัส OTP ยืนยันตัวตน</h2>
+        <h4>OTP ถูกส่งไปยังเบอร์ 095-xxx-xx39</h4>
+
+        <input type="text" id="pincode-input1" >
+
+        <br>
+        <small>Ref: 2494</small>
+
+        <div class="page-button">
+          <!-- <a href="9_Result.html">
+            <button type="button" name="button" class="btn btn-primary max-width">ยืนยัน</button>
+          </a> -->
+          <p>ไม่ได้รับ OTP? <a href="#">ส่งใหม่</a></p>
         </div>
       </div>
-
-      <div class="page-button">
-        <a href="9_Result.html">
-          <button type="button" name="button" class="btn btn-primary max-width">ยืนยัน</button>
-        </a>
-      </div>
-
+      <p>หากพบปัญหากรุณาติดต่อ 02-XXX-XXXX</p>
     </div>
 
 
@@ -62,6 +69,14 @@
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap-pincode-input/js/bootstrap-pincode-input.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#pincode-input1').pincodeInput({hidedigits:false,inputs:6,complete:function(value, e, errorElement){
+              window.location = '9_Result.html';
+            }});
+        });
+    </script>
 
   </body>
 
