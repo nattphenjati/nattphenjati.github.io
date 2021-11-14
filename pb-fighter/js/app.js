@@ -30,7 +30,10 @@ const app = Vue.createApp({
       youWin: false,
       youLose: false,
       finishLogin: false,
+      isLoading: false,
       roundCounter: 1,
+      yourAttackCounter: 0,
+      enemyAttackCounter: 0,
       controlText: 'What will you do?',
       restartButton: 'RESTART',
       startButton: 'START GAME',
@@ -40,6 +43,9 @@ const app = Vue.createApp({
   },
   methods: {
     startGame(){
+      this.isDisabled = true
+      this.isLoading = true
+      this.yourID = event.target.id
       console.log(this.yourID.length)
       if(this.yourID.length == 4){
         this.startButton = 'LOADING..'
@@ -74,6 +80,7 @@ const app = Vue.createApp({
       this.yourHP = (this.currentHP/this.maxHP)*100
       console.log("Your HP = " + this.currentHP + "[" + this.yourHP +"]%")
 
+      this.isDisabled = false
       this.finishLogin = true
     },
     getNewEnemy(){
@@ -103,11 +110,17 @@ const app = Vue.createApp({
       this.enemyTraits.sort((a,b)=> (a.trait_type > b.trait_type ? 1 : -1))
       console.log(this.enemyTraits)
 
-      this.enemyMaxATK = this.enemyTraits[16].value //This will break with 'Neck'
+      this.enemyMaxATK = this.enemyTraits[16].value //This will break with 'Neck'+'Glass'+'Hat'
       this.enemyCurrentHP = this.enemyTraits[9].value*10
       this.enemyMaxHP = this.enemyCurrentHP
       this.enemyHP = (this.enemyCurrentHP/this.enemyMaxHP)*100
       console.log("New Enemy HP = " + this.enemyCurrentHP + "[" + this.enemyHP +"]%")
+
+      //Fix Neck Bug
+      if(typeof this.enemyMaxATK === 'string'){
+        console.log("Found Neck Bug")
+        this.enemyMaxATK = this.enemyTraits[18].value
+      }
 
       if(this.youWin == false){
         console.log("Restart the game")
@@ -141,6 +154,7 @@ const app = Vue.createApp({
       console.log("Your Attack = " + this.pureATK)
       this.enemyCurrentHP -= this.pureATK
       this.enemyHP = (this.enemyCurrentHP/this.enemyMaxHP)*100
+      this.yourAttackCounter = this.yourAttackCounter+1
       console.log("current Enemy HP = " + this.enemyCurrentHP + "[" + this.enemyHP +"]%")
       this.isDisabled = true
       if (this.enemyHP <= 0){
@@ -177,6 +191,7 @@ const app = Vue.createApp({
         this.currentHP = 0
       }
       this.yourHP = (this.currentHP/this.maxHP)*100
+      this.enemyAttackCounter = this.enemyAttackCounter+1
       this.isDisabled = false
       if (this.yourHP <= 0){
         this.controlText = 'You Lose!'
